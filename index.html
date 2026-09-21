@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>𝑁𝑔𝑢𝑦𝑒𝑛 𝑇ℎ𝑎𝑛ℎ 𝐷𝑖𝑒𝑚 - Profile</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="𝑁𝑔𝑢𝑦𝑒𝑛 𝑇ℎ𝑎𝑛ℎ 𝐷𝑖𝑒𝑚">
+<meta property="og:description" content="This is Nguyen Thanh Diem - Dev Tool Master">
+<meta property="og:image" content="https://p16-common-sign.tiktokcdn.com/tos-maliva-avt-0068/0ecd6ee9a916e0177ebe578e7d2ddbc8~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=d4874446&x-expires=1790125200&x-signature=IQxNGvw0zNKsMsdYdkExr8cv1kg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my2">
+
+<!-- FAVICON dùng ảnh avatar -->
+<link rel="icon" type="image/jpeg" href="https://p16-common-sign.tiktokcdn.com/tos-maliva-avt-0068/0ecd6ee9a916e0177ebe578e7d2ddbc8~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=d4874446&x-expires=1790125200&x-signature=IQxNGvw0zNKsMsdYdkExr8cv1kg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my2">
+<link rel="apple-touch-icon" sizes="180x180" href="https://p16-common-sign.tiktokcdn.com/tos-maliva-avt-0068/0ecd6ee9a916e0177ebe578e7d2ddbc8~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=d4874446&x-expires=1790125200&x-signature=IQxNGvw0zNKsMsdYdkExr8cv1kg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my2">
+<link rel="mask-icon" href="https://p16-common-sign.tiktokcdn.com/tos-maliva-avt-0068/0ecd6ee9a916e0177ebe578e7d2ddbc8~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=d4874446&x-expires=1790125200&x-signature=IQxNGvw0zNKsMsdYdkExr8cv1kg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my2" color="#a855f7">
+
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --bg: #000000;
+  --bg-2: #0a0a0a;
+  --card: #0f0f0f;
+  --card-2: #161616;
+  --card-hover: #1a1a1a;
+  --border: #1f1f1f;
+  --border-2: #2a2a2a;
+  --text: #ffffff;
+  --text-2: #a0a0a0;
+  --text-3: #666666;
+  --accent: #3b82f6;
+  --purple: #a855f7;
+  --cyan: #06b6d4;
+  --green: #10b981;
+  --red: #ef4444;
+  --yellow: #f59e0b;
+  --pink: #ec4899;
+  --link: #8b7fd9;
+}
+[data-theme="light"] {
+  --bg: #f5f7fb;
+  --bg-2: #eef2f7;
+  --card: #ffffff;
+  --card-2: #f8fafc;
+  --card-hover: #f1f5f9;
+  --border: #e2e8f0;
+  --border-2: #cbd5e1;
+  --text: #0f172a;
+  --text-2: #475569;
+  --text-3: #94a3b8;
+  --link: #705ec8;
+}
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  background-image:
+    radial-gradient(circle at 10% 0%, rgba(139, 127, 217, 0.08), transparent 30%),
+    radial-gradient(circle at 90% 100%, rgba(6, 182, 212, 0.06), transparent 30%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px 16px;
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* SVG icon base */
+.icon-svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: block;
+  flex-shrink: 0;
+}
+.icon-svg.fill {
+  fill: currentColor;
+  stroke: none;
+}
+.icon-svg.small { width: 16px; height: 16px; }
+.icon-svg.big { width: 24px; height: 24px; }
+
+.nav-top {
+  position: fixed;
+  top: 16px; left: 16px; right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  pointer-events: none;
+}
+.nav-top > * { pointer-events: auto; }
+.nav-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 10px 16px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; color: var(--text-2);
+  text-decoration: none; font-size: 0.82rem; font-weight: 600;
+  cursor: pointer; transition: all 0.25s;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.nav-btn:hover {
+  border-color: var(--purple);
+  color: var(--purple);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(168,85,247,0.2);
+}
+.nav-right { display: flex; gap: 8px; }
+
+.container {
+  max-width: 900px;
+  margin: 60px auto 0;
+  padding: 0;
+}
+
+/* VIEW COUNTER */
+.view-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 14px 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+.view-bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(59,130,246,0.03), transparent 50%);
+  pointer-events: none;
+}
+.view-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-2);
+  position: relative;
+  z-index: 1;
+}
+.view-stat .stat-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.view-stat.views .stat-icon { color: #22d3ee; background: rgba(34,211,238,0.1); }
+.view-stat.downloads .stat-icon { color: #34d399; background: rgba(52,211,153,0.1); }
+.view-stat.online .stat-icon { color: #fbbf24; background: rgba(251,191,36,0.1); }
+.view-stat strong {
+  color: var(--text);
+  font-weight: 800;
+  font-family: ui-monospace, monospace;
+  font-size: 0.92rem;
+}
+.view-stat .live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fbbf24;
+  box-shadow: 0 0 8px #fbbf24;
+  animation: pulse-live 2s infinite;
+  margin-left: 2px;
+}
+@keyframes pulse-live {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.2); }
+}
+
+/* PROFILE HEADER */
+.profile-header {
+  display: grid;
+  grid-template-columns: 150px 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 26px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.profile-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--purple), var(--cyan), var(--pink), var(--purple));
+  background-size: 200% 100%;
+  animation: gradient-slide 4s linear infinite;
+}
+@keyframes gradient-slide {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+.avatar-wrap {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border-2);
+  display: block;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+.avatar-wrap:hover .avatar {
+  border-color: var(--purple);
+  box-shadow: 0 0 30px rgba(168,85,247,0.5);
+  transform: scale(1.02);
+}
+.status-dot {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--green);
+  border: 3px solid var(--card);
+  z-index: 3;
+  box-shadow: 0 0 12px var(--green);
+  animation: pulse-green 2s infinite;
+}
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 12px var(--green), 0 0 0 0 rgba(16,185,129,0.6); }
+  50% { box-shadow: 0 0 12px var(--green), 0 0 0 8px rgba(16,185,129,0); }
+}
+.profile-info { min-width: 0; }
+.profile-info h1 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  letter-spacing: -0.01em;
+}
+.verified-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(59,130,246,0.6));
+}
+.profile-info .bio {
+  color: var(--text-2);
+  font-size: 0.92rem;
+  margin: 0;
+  line-height: 1.5;
+}
+.header-btns { display: flex; gap: 8px; flex-direction: column; }
+.download-btn, .share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  background: transparent;
+  border: 1.5px solid var(--text);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s;
+  font-family: inherit;
+  white-space: nowrap;
+}
+.download-btn:hover {
+  background: var(--text);
+  color: var(--bg);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,255,255,0.15);
+}
+.share-btn { border-color: var(--border-2); color: var(--text-2); }
+.share-btn:hover {
+  background: linear-gradient(135deg, var(--purple), var(--cyan));
+  border-color: transparent;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(168,85,247,0.4);
+}
+
+/* CARDS */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  position: relative;
+}
+.card:hover {
+  background: var(--card-hover);
+  border-color: var(--border-2);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+.card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  transition: all 0.3s;
+}
+.card:hover .card-icon { transform: scale(1.08) rotate(-4deg); }
+.card.intro { grid-column: 1 / -1; }
+.card.intro .card-icon { color: #60a5fa; background: rgba(59,130,246,0.1); border-color: rgba(59,130,246,0.2); }
+.card.job .card-icon { color: #c084fc; background: rgba(168,85,247,0.1); border-color: rgba(168,85,247,0.2); }
+.card.birthday .card-icon { color: #f472b6; background: rgba(236,72,153,0.1); border-color: rgba(236,72,153,0.2); }
+.card.lang .card-icon { color: #22d3ee; background: rgba(6,182,212,0.1); border-color: rgba(6,182,212,0.2); }
+.card.address .card-icon { color: #f87171; background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.2); }
+.card.gender .card-icon { color: #fbbf24; background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.2); }
+.card.alias .card-icon { color: #34d399; background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.2); }
+
+.card-content { flex: 1; min-width: 0; }
+.card-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-3);
+  margin-bottom: 5px;
+}
+.card-value {
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+/* SECTION HEADERS */
+.social-header, .apps-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.section-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.social-header .section-icon {
+  background: rgba(168,85,247,0.12);
+  color: #c084fc;
+  border: 1px solid rgba(168,85,247,0.2);
+}
+.apps-header .section-icon {
+  background: rgba(6,182,212,0.12);
+  color: #22d3ee;
+  border: 1px solid rgba(6,182,212,0.2);
+}
+.section-title {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 800;
+}
+
+/* SOCIAL SECTION */
+.social-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px;
+  margin-bottom: 20px;
+  transition: border-color 0.25s;
+}
+.social-section:hover { border-color: var(--border-2); }
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.social-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 15px;
+  border-radius: 14px;
+  color: var(--text);
+  text-decoration: none;
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.social-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--sc-color, var(--accent));
+  transition: width 0.3s ease;
+  z-index: 0;
+}
+.social-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 100% 50%, var(--sc-color, var(--accent)) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 0;
+}
+.social-card:hover {
+  transform: translateX(5px);
+  border-color: var(--sc-color, var(--accent));
+  background: var(--card-hover);
+}
+.social-card:hover::after { opacity: 0.08; }
+.social-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.social-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+.social-card:hover .social-icon { transform: scale(1.12) rotate(-6deg); }
+.social-card.github { --sc-color: #6e7681; }
+.social-card.github .social-icon { background: linear-gradient(135deg, #24292e, #57606a); }
+.social-card.tiktok { --sc-color: #ee1d52; }
+.social-card.tiktok .social-icon { background: linear-gradient(135deg, #000, #ee1d52); }
+.social-card.facebook { --sc-color: #1877f2; }
+.social-card.facebook .social-icon { background: linear-gradient(135deg, #1877f2, #4a91ff); }
+.social-card.telegram { --sc-color: #0088cc; }
+.social-card.telegram .social-icon { background: linear-gradient(135deg, #0088cc, #00b4e6); }
+.social-card.instagram { --sc-color: #dd2a7b; }
+.social-card.instagram .social-icon { background: linear-gradient(135deg, #dd2a7b, #8134af, #515bd4); }
+.social-card.twitter { --sc-color: #1da1f2; }
+.social-card.twitter .social-icon { background: linear-gradient(135deg, #1da1f2, #0d8ddb); }
+
+.social-info { flex: 1; min-width: 0; position: relative; z-index: 1; }
+.social-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+.social-handle {
+  font-size: 0.72rem;
+  color: var(--text-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.social-arrow {
+  color: var(--text-3);
+  flex-shrink: 0;
+  transition: all 0.3s;
+  position: relative;
+  z-index: 1;
+}
+.social-card:hover .social-arrow {
+  color: var(--sc-color, var(--accent));
+  transform: translateX(5px);
+}
+
+/* APPS SECTION */
+.apps-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px;
+  margin-bottom: 20px;
+  transition: border-color 0.25s;
+}
+.apps-section:hover { border-color: var(--border-2); }
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.app-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 15px;
+  border-radius: 14px;
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.app-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 0% 100%, var(--app-color, var(--accent)) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 0;
+}
+.app-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--app-color, var(--accent));
+  box-shadow: 0 14px 32px rgba(0,0,0,0.4);
+}
+.app-card:hover::before { opacity: 0.1; }
+.app-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
+.app-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.app-card:hover .app-icon { transform: scale(1.1) rotate(-5deg); }
+.app-card.t2fa { --app-color: #3b82f6; }
+.app-card.t2fa .app-icon { background: linear-gradient(135deg, #3b82f6, #6366f1); }
+.app-card.blur { --app-color: #a855f7; }
+.app-card.blur .app-icon { background: linear-gradient(135deg, #a855f7, #6366f1); }
+.app-card.fonts { --app-color: #ec4899; }
+.app-card.fonts .app-icon { background: linear-gradient(135deg, #ec4899, #f43f5e); }
+.app-card.calc { --app-color: #10b981; }
+.app-card.calc .app-icon { background: linear-gradient(135deg, #10b981, #06b6d4); }
+.app-card.recorder { --app-color: #f59e0b; }
+.app-card.recorder .app-icon { background: linear-gradient(135deg, #f59e0b, #ef4444); }
+.app-card.tiktok { --app-color: #ee1d52; }
+.app-card.tiktok .app-icon { background: linear-gradient(135deg, #000, #ee1d52); }
+.app-card.ipa { --app-color: #06b6d4; }
+.app-card.ipa .app-icon { background: linear-gradient(135deg, #06b6d4, #3b82f6); }
+
+.app-info { flex: 1; min-width: 0; position: relative; z-index: 1; }
+.app-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 3px;
+}
+.app-desc {
+  font-size: 0.72rem;
+  color: var(--text-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+}
+.app-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 3px 7px;
+  border-radius: 100px;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.app-badge.hot {
+  background: rgba(239,68,68,0.15);
+  color: #f87171;
+  border: 1px solid rgba(239,68,68,0.3);
+  animation: badge-glow-red 2s infinite;
+}
+.app-badge.new {
+  background: rgba(16,185,129,0.15);
+  color: #34d399;
+  border: 1px solid rgba(16,185,129,0.3);
+  animation: badge-glow-green 2s infinite;
+}
+@keyframes badge-glow-red {
+  0%, 100% { box-shadow: 0 0 0 rgba(239,68,68,0); }
+  50% { box-shadow: 0 0 12px rgba(239,68,68,0.5); }
+}
+@keyframes badge-glow-green {
+  0%, 100% { box-shadow: 0 0 0 rgba(16,185,129,0); }
+  50% { box-shadow: 0 0 12px rgba(16,185,129,0.5); }
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 30px 0 20px 0;
+}
+
+footer {
+  text-align: center;
+  color: var(--text-3);
+  font-size: 0.8rem;
+  padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+footer a {
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+footer a:hover { color: var(--cyan); }
+footer .heart {
+  color: var(--pink);
+  animation: heart-beat 1.5s infinite;
+  display: inline-flex;
+}
+@keyframes heart-beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--card);
+  border: 1px solid var(--green);
+  color: var(--green);
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 3000;
+  pointer-events: none;
+  max-width: 90vw;
+  text-align: center;
+}
+.toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.card, .social-card, .app-card, .profile-header, .social-section, .apps-section, .view-bar {
+  animation: fadeUp 0.5s ease backwards;
+}
+
+@media (max-width: 700px) {
+  body { padding: 16px 12px; }
+  .nav-top { top: 12px; left: 12px; right: 12px; }
+  .nav-btn span { display: none; }
+  .nav-btn { padding: 10px; width: 40px; justify-content: center; }
+  .container { margin-top: 60px; }
+  .profile-header {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 22px;
+    gap: 16px;
+  }
+  .avatar-wrap { margin: 0 auto; width: 120px; height: 120px; }
+  .avatar { width: 120px; height: 120px; }
+  .profile-info h1 { font-size: 1.35rem; justify-content: center; }
+  .header-btns { width: 100%; flex-direction: column; }
+  .download-btn, .share-btn { width: 100%; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .social-grid { grid-template-columns: 1fr; }
+  .apps-grid { grid-template-columns: 1fr; }
+  .view-bar { gap: 14px; padding: 12px 16px; }
+  .view-stat { font-size: 0.75rem; gap: 6px; }
+  .view-stat .stat-icon { width: 28px; height: 28px; }
+  .view-stat .stat-icon svg { width: 16px; height: 16px; }
+  .view-stat strong { font-size: 0.82rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="nav-top">
+  <a href="https://ngthanhdiem.github.io" class="nav-btn">
+    <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    <span>Trang chủ</span>
+  </a>
+  <div class="nav-right">
+    <a href="https://t.me/ThanhDiemX" target="_blank" rel="noopener noreferrer" class="nav-btn">
+      <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      <span>Telegram</span>
+    </a>
+    <button class="nav-btn" id="themeToggle" title="Đổi theme">
+      <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="themeIcon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- VIEW COUNTER -->
+  <div class="view-bar">
+    <div class="view-stat views">
+      <div class="stat-icon">
+        <svg class="icon-svg small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      </div>
+      <span>Lượt xem:</span>
+      <strong id="viewCount">0</strong>
+    </div>
+    <div class="view-stat downloads">
+      <div class="stat-icon">
+        <svg class="icon-svg small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      </div>
+      <span>Lượt tải:</span>
+      <strong id="downloadCount">0</strong>
+    </div>
+    <div class="view-stat online">
+      <div class="stat-icon">
+        <svg class="icon-svg small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+      </div>
+      <span>Đang online:</span>
+      <strong id="onlineCount">0</strong>
+      <span class="live-dot"></span>
+    </div>
+  </div>
+
+  <!-- PROFILE HEADER -->
+  <div class="profile-header">
+    <div class="avatar-wrap">
+      <img class="avatar"
+           src="https://p16-common-sign.tiktokcdn.com/tos-maliva-avt-0068/0ecd6ee9a916e0177ebe578e7d2ddbc8~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=d4874446&x-expires=1790125200&x-signature=IQxNGvw0zNKsMsdYdkExr8cv1kg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my2"
+           alt="ThanhDiemX">
+      <div class="status-dot"></div>
+    </div>
+    <div class="profile-info">
+      <h1>
+        𝑁𝑔𝑢𝑦𝑒𝑛 𝑇ℎ𝑎𝑛ℎ 𝐷𝑖𝑒𝑚
+        <svg class="verified-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#3b82f6" d="M12 1l2.4 2.4 3.4-.4.5 3.4 3 1.6-1.5 3 1.5 3-3 1.6-.5 3.4-3.4-.4L12 23l-2.4-2.4-3.4.4-.5-3.4-3-1.6 1.5-3-1.5-3 3-1.6.5-3.4 3.4.4L12 1z"/>
+          <path fill="#fff" d="M10.6 15.6l-3.1-3.1 1.4-1.4 1.7 1.7 4.4-4.4 1.4 1.4-5.8 5.8z"/>
+        </svg>
+      </h1>
+      <p class="bio">This is Nguyen Thanh Diem, I'm the dev tool master!</p>
+    </div>
+    <div class="header-btns">
+      <a href="https://ngthanhdiem.github.io" class="download-btn">
+        <svg class="icon-svg small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        Download
+      </a>
+      <button class="share-btn" id="shareBtn">
+        <svg class="icon-svg small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        Chia sẻ
+      </button>
+    </div>
+  </div>
+
+  <!-- INFO CARDS -->
+  <div class="cards-grid">
+
+    <div class="card intro">
+      <div class="card-icon">
+        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div class="card-content">
+        <div class="card-label">Giới Thiệu</div>
+        <div class="card-value">This is Nguyen Thanh Diem, I'm the dev tool master!</div>
+      </div>
+    </div>
+
+    <div class="card job">
+      <div class="card-icon">
+        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      </div>
+      <div class="card-content">
+        <div class="card-label">Nghề Nghiệp</div>
+        <div class="card-value">Developer</div>
+      </div>
+    </div>
+
+    <div class="card birthday">
+      <div class="card-icon">
+        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <div class="card-content">
+        <div class="card-label">Sinh Nhật</div>
+        <div class="card-value">30/03/2012</div>
+      </div>
+    </div>
+
+    <div class="card lang">
+      <div class="card-icon">
+        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <div class="card-content">
+        <div class="card-label">Ngôn Ngữ Lập Trình</div>
+        <div class="card-value">Python / JavaScript / PHP / C#</div>
+      </div>
+    </div>
+
+    <div class="card address">
+      <div class="card-icon">
+        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="card-content">
+        <div class="card-label">Địa Chỉ</div>
+        <div class="card-value">Đồng Phong, Ninh Bình</div>
+      </div>
+    </div>
+
+    <div class="card gender">
+      <div class="card-icon">
+        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="2" x2="12" y2="7"/><line x1="12" y1="17" x2="12" y2="22"/><line x1="2" y1="12" x2="7" y2="12"/><line x1="17" y1="12" x2="22" y2="12"/></svg>
+      </div>
+      <div class="card-content">
+        <div class="card-label">Giới Tính</div>
+        <div class="card-value">Female</div>
+      </div>
+    </div>
+
+    <div class="card alias">
+      <div class="card-icon">
+        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <div class="card-content">
+        <div class="card-label">Bí Danh</div>
+        <div class="card-value">Honey, Baby, Hunnie</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SOCIAL MEDIA -->
+  <div class="social-section">
+    <div class="social-header">
+      <div class="section-icon">
+        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      </div>
+      <div class="section-title">Social Media</div>
+    </div>
+    <div class="social-grid">
+
+      <a href="https://minhdiem.pages.dev" target="_blank" rel="noopener noreferrer" class="social-card github">
+        <div class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-1.93c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.75 2.7 1.25 3.36.95.1-.74.4-1.25.72-1.54-2.56-.29-5.25-1.28-5.25-5.71 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.19a11.06 11.06 0 0 1 5.79 0c2.21-1.5 3.18-1.19 3.18-1.19.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.44-2.7 5.42-5.27 5.7.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+        </div>
+        <div class="social-info">
+          <div class="social-name">GitHub</div>
+          <div class="social-handle">@NguyenThanhDiemX</div>
+        </div>
+        <svg class="icon-svg small social-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+
+      <a href="https://tiktok.com/@NgThanhDiem" target="_blank" rel="noopener noreferrer" class="social-card tiktok">
+        <div class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+        </div>
+        <div class="social-info">
+          <div class="social-name">TikTok</div>
+          <div class="social-handle">@NgThanhDiem</div>
+        </div>
+        <svg class="icon-svg small social-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+
+      <a href="https://facebook.com/NguyenThanhDiemX" target="_blank" rel="noopener noreferrer" class="social-card facebook">
+        <div class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </div>
+        <div class="social-info">
+          <div class="social-name">Facebook</div>
+          <div class="social-handle">@NguyenThanhDiemX</div>
+        </div>
+        <svg class="icon-svg small social-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+
+      <a href="https://t.me/ThanhDiemX" target="_blank" rel="noopener noreferrer" class="social-card telegram">
+        <div class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        </div>
+        <div class="social-info">
+          <div class="social-name">Telegram</div>
+          <div class="social-handle">@ThanhDiemX</div>
+        </div>
+        <svg class="icon-svg small social-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+
+      <a href="https://instagram.com/minhdiemx/" target="_blank" rel="noopener noreferrer" class="social-card instagram">
+        <div class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </div>
+        <div class="social-info">
+          <div class="social-name">Instagram</div>
+          <div class="social-handle">@minhdiemx</div>
+        </div>
+        <svg class="icon-svg small social-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+
+      <a href="https://thanhdiem.pages.dev" target="_blank" rel="noopener noreferrer" class="social-card twitter">
+        <div class="social-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </div>
+        <div class="social-info">
+          <div class="social-name">Twitter / X</div>
+          <div class="social-handle">@thanhdiemx</div>
+        </div>
+        <svg class="icon-svg small social-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- APPS -->
+  <div class="apps-section">
+    <div class="apps-header">
+      <div class="section-icon">
+        <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      </div>
+      <div class="section-title">Ứng dụng của tôi</div>
+    </div>
+    <div class="apps-grid">
+
+      <a href="https://ngthanhdiem.github.io/tiktok/" target="_blank" rel="noopener noreferrer" class="app-card tiktok" data-app="tiktok">
+        <span class="app-badge hot">HOT</span>
+        <div class="app-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+        </div>
+        <div class="app-info">
+          <div class="app-name">Tải TikTok</div>
+          <div class="app-desc">Video HD, MP3, album</div>
+        </div>
+      </a>
+
+      <a href="https://ngthanhdiem.github.io/ipa" target="_blank" rel="noopener noreferrer" class="app-card ipa" data-app="ipa">
+        <span class="app-badge new">NEW</span>
+        <div class="app-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        </div>
+        <div class="app-info">
+          <div class="app-name">Kho IPA</div>
+          <div class="app-desc">Tải ứng dụng iOS</div>
+        </div>
+      </a>
+
+      <a href="https://ngthanhdiem.github.io/2fa/" target="_blank" rel="noopener noreferrer" class="app-card t2fa" data-app="2fa">
+        <div class="app-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div class="app-info">
+          <div class="app-name">2FA Authenticator</div>
+          <div class="app-desc">Tạo mã xác thực 2 lớp</div>
+        </div>
+      </a>
+
+      <a href="https://ngthanhdiem.github.io/blur-image/" target="_blank" rel="noopener noreferrer" class="app-card blur" data-app="blur">
+        <div class="app-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+        </div>
+        <div class="app-info">
+          <div class="app-name">Làm mờ ảnh</div>
+          <div class="app-desc">Che thông tin nhạy cảm</div>
+        </div>
+      </a>
+
+      <a href="https://ngthanhdiem.github.io/fonts/" target="_blank" rel="noopener noreferrer" class="app-card fonts" data-app="fonts">
+        <div class="app-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+        </div>
+        <div class="app-info">
+          <div class="app-name">Tạo kiểu chữ</div>
+          <div class="app-desc">Chuyển chữ Unicode đẹp</div>
+        </div>
+      </a>
+
+      <a href="https://ngthanhdiem.github.io/calculator/" target="_blank" rel="noopener noreferrer" class="app-card calc" data-app="calc">
+        <div class="app-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+        </div>
+        <div class="app-info">
+          <div class="app-name">Máy tính</div>
+          <div class="app-desc">Cơ bản và Casino</div>
+        </div>
+      </a>
+
+      <a href="https://ngthanhdiem.github.io/recorder/" target="_blank" rel="noopener noreferrer" class="app-card recorder" data-app="recorder">
+        <div class="app-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        </div>
+        <div class="app-info">
+          <div class="app-name">Ghi âm & Màn hình</div>
+          <div class="app-desc">Quay màn hình, webcam</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <footer>
+    <span>Copyright All Rights Reserved © 2022 -</span>
+    <a href="https://facebook.com/NguyenThanhDiemX" target="_blank" rel="noopener noreferrer">ThanhDiemX</a>
+    <span class="heart">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    </span>
+  </footer>
+
+</div>
+
+<div class="toast" id="toast">Đã xong!</div>
+
+<script>
+(function() {
+  'use strict';
+
+  // ==========================================
+  // COUNTER ANIMATION
+  // ==========================================
+  function animateCount(el, target, duration) {
+    duration = duration || 1500;
+    const start = 0;
+    const startTime = performance.now();
+    function update(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(start + (target - start) * eased);
+      el.textContent = current.toLocaleString('vi-VN');
+      if (progress < 1) requestAnimationFrame(update);
+      else el.textContent = target.toLocaleString('vi-VN');
+    }
+    requestAnimationFrame(update);
+  }
+
+  // ==========================================
+  // VIEW COUNTER
+  // ==========================================
+  const VIEW_KEY = 'site_view_count_v1';
+  const DOWNLOAD_KEY = 'site_download_count_v1';
+  const VISIT_TIME_KEY = 'site_last_visit_v1';
+  const APP_CLICK_KEY = 'app_click_counts_v1';
+  const BASE_VIEWS = 12480;
+  const BASE_DOWNLOADS = 3267;
+
+  function getRandomIncrement(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function initViewCount() {
+    let current = parseInt(localStorage.getItem(VIEW_KEY) || '0', 10);
+    const lastVisit = parseInt(localStorage.getItem(VISIT_TIME_KEY) || '0', 10);
+    const now = Date.now();
+    if (current === 0) {
+      current = BASE_VIEWS + getRandomIncrement(50, 500);
+    } else {
+      const hoursSince = (now - lastVisit) / (1000 * 60 * 60);
+      if (hoursSince > 1) current += Math.floor(hoursSince * getRandomIncrement(2, 8));
+    }
+    current += 1;
+    localStorage.setItem(VIEW_KEY, current.toString());
+    localStorage.setItem(VISIT_TIME_KEY, now.toString());
+    return current;
+  }
+
+  function getDownloadCount() {
+    let current = parseInt(localStorage.getItem(DOWNLOAD_KEY) || '0', 10);
+    if (current === 0) {
+      current = BASE_DOWNLOADS;
+      localStorage.setItem(DOWNLOAD_KEY, current.toString());
+    }
+    return current;
+  }
+
+  function getOnlineCount() { return getRandomIncrement(23, 78); }
+
+  const viewEl = document.getElementById('viewCount');
+  const downloadEl = document.getElementById('downloadCount');
+  const onlineEl = document.getElementById('onlineCount');
+
+  animateCount(viewEl, initViewCount(), 1800);
+  animateCount(downloadEl, getDownloadCount(), 1800);
+  animateCount(onlineEl, getOnlineCount(), 1200);
+
+  setInterval(() => {
+    const cur = parseInt(onlineEl.textContent.replace(/\./g, ''), 10) || 50;
+    let next = cur + getRandomIncrement(-3, 3);
+    if (next < 15) next = 15;
+    if (next > 120) next = 120;
+    animateCount(onlineEl, next, 800);
+  }, getRandomIncrement(5000, 12000));
+
+  // ==========================================
+  // APP CLICK TRACK
+  // ==========================================
+  function getAppClicks() {
+    try {
+      const raw = localStorage.getItem(APP_CLICK_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return {}; }
+  }
+
+  function trackAppClick(appId) {
+    const clicks = getAppClicks();
+    clicks[appId] = (clicks[appId] || 0) + 1;
+    localStorage.setItem(APP_CLICK_KEY, JSON.stringify(clicks));
+    let dl = parseInt(localStorage.getItem(DOWNLOAD_KEY) || '0', 10);
+    dl += 1;
+    localStorage.setItem(DOWNLOAD_KEY, dl.toString());
+    const curDl = parseInt(downloadEl.textContent.replace(/\./g, ''), 10) || 0;
+    animateCount(downloadEl, curDl + 1, 400);
+  }
+
+  document.querySelectorAll('.app-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const appId = card.dataset.app;
+      if (appId) trackAppClick(appId);
+    });
+  });
+
+  // ==========================================
+  // SHARE
+  // ==========================================
+  const toast = document.getElementById('toast');
+  let toastTimer = null;
+  function showToast(msg, isError) {
+    toast.textContent = msg;
+    toast.style.borderColor = isError ? 'var(--red)' : 'var(--green)';
+    toast.style.color = isError ? 'var(--red)' : 'var(--green)';
+    toast.classList.add('show');
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2400);
+  }
+
+  const SHARE_URL = 'https://ngthanhdiem.github.io';
+  const SHARE_TITLE = 'Nguyen Thanh Diem - Dev Tool Master';
+  const SHARE_TEXT = 'Khám phá bộ công cụ online miễn phí: 2FA, tải TikTok, làm mờ ảnh, IPA Store và nhiều hơn nữa!';
+
+  document.getElementById('shareBtn').addEventListener('click', async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: SHARE_TITLE, text: SHARE_TEXT, url: SHARE_URL });
+        return;
+      } catch (err) { if (err.name === 'AbortError') return; }
+    }
+    try {
+      await navigator.clipboard.writeText(SHARE_URL);
+      showToast('Đã copy link website!');
+    } catch (e) { prompt('Copy link này:', SHARE_URL); }
+  });
+
+  // ==========================================
+  // THEME
+  // ==========================================
+  const THEME_KEY = 'profile_theme_v7';
+  const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateThemeIcon(savedTheme);
+
+  function updateThemeIcon(theme) {
+    const icon = document.getElementById('themeIcon');
+    if (theme === 'dark') {
+      icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+    } else {
+      icon.innerHTML = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
+    }
+  }
+
+  document.getElementById('themeToggle').addEventListener('click', () => {
+    const cur = document.documentElement.getAttribute('data-theme');
+    const next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    updateThemeIcon(next);
+    localStorage.setItem(THEME_KEY, next);
+  });
+})();
+</script>
+</body>
+</html>
