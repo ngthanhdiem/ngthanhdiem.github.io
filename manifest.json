@@ -1,0 +1,15 @@
+{
+  "name": "𝑁𝑔𝑢𝑦𝑒𝑛 𝑇ℎ𝑎𝑛ℎ 𝐷𝑖𝑒𝑚 Profile",
+  "short_name": "Thanh Diem",
+  "description": "Nguyen Thanh Diem Profile",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#151823",
+  "theme_color": "#151823",
+  "icons": [
+    { "src": "thanhdiem.jpg", "sizes": "192x192", "type": "image/jpeg", "purpose": "any" },
+    { "src": "thanhdiem.jpg", "sizes": "512x512", "type": "image/jpeg", "purpose": "any" }
+  ]
+}
