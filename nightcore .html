@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nightcore Maker — Free Online Nightcore Generator</title>
+<meta name="description" content="Free nightcore maker and generator: drop in a song and it plays faster with the pitch raised. Sped up and daycore presets, WAV download, no sign-up.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#050508;--surface:#0c0c12;--surface2:#14141e;--border:#1f1f2e;--text:#eaeaf2;--muted:#6b6b85;--accent:#8b5cf6;--accent2:#06d6a0;--glow:rgba(139,92,246,.3)}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased}
+nav{position:sticky;top:0;z-index:100;background:rgba(5,5,8,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;font-size:1.1rem;letter-spacing:-.02em;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:18px;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.tg-btn{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,var(--accent),#6d28d9);color:#fff;text-decoration:none;font-weight:600;font-size:.82rem;padding:8px 16px;border-radius:8px;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 18px var(--glow)}
+.tg-btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px var(--glow)}
+.tg-btn svg{width:16px;height:16px;fill:currentColor}
+.hero{max-width:800px;margin:0 auto;padding:72px 24px 32px;text-align:center}
+.hero h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;letter-spacing:-.03em;line-height:1.15;margin-bottom:12px}
+.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{color:var(--muted);font-size:1rem;max-width:560px;margin:0 auto}
+.tool-section{max-width:780px;margin:0 auto;padding:16px 24px 64px}
+.dropzone{background:var(--surface);border:2px dashed var(--border);border-radius:16px;padding:56px 28px;text-align:center;cursor:pointer;transition:border-color .3s,background .3s}
+.dropzone:hover,.dropzone.dragover{border-color:var(--accent);background:var(--surface2)}
+.dropzone svg{width:44px;height:44px;fill:var(--muted);margin-bottom:12px}
+.dropzone h3{font-size:1.1rem;margin-bottom:4px}
+.dropzone p{color:var(--muted);font-size:.85rem}
+.dropzone .formats{display:inline-block;margin-top:14px;background:var(--surface2);border:1px solid var(--border);border-radius:18px;padding:5px 14px;font-size:.72rem;color:var(--muted);letter-spacing:.02em}
+.panel{display:none;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin-top:20px}
+.panel.active{display:block}
+.file-info{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--surface2);border-radius:10px;margin-bottom:20px}
+.file-info .icon{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.file-info .meta{flex:1;min-width:0}
+.file-info .name{font-weight:600;font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.file-info .detail{font-size:.75rem;color:var(--muted)}
+.file-info .remove{background:none;border:none;color:var(--muted);cursor:pointer;font-size:1.1rem;padding:4px 8px;transition:color .2s}
+.file-info .remove:hover{color:#ef4444}
+.presets{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px}
+.preset{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 8px;text-align:center;cursor:pointer;transition:all .2s}
+.preset:hover{border-color:var(--accent)}
+.preset.active{border-color:var(--accent);background:rgba(139,92,246,.12);box-shadow:0 0 0 1px var(--accent) inset}
+.preset .label{font-weight:700;font-size:.82rem;margin-bottom:2px}
+.preset .desc{font-size:.68rem;color:var(--muted)}
+.control-group{margin-bottom:18px}
+.control-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.control-header label{font-weight:600;font-size:.88rem}
+.control-header .value{font-size:.85rem;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums}
+input[type="range"]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:3px;background:var(--border);outline:none;cursor:pointer}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));border:2px solid var(--bg);box-shadow:0 0 10px var(--glow);cursor:grab;transition:transform .15s}
+input[type="range"]::-webkit-slider-thumb:active{transform:scale(1.15);cursor:grabbing}
+input[type="range"]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));border:2px solid var(--bg);box-shadow:0 0 10px var(--glow);cursor:grab}
+.range-labels{display:flex;justify-content:space-between;font-size:.68rem;color:var(--muted);margin-top:5px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.stat{background:var(--surface2);border-radius:10px;padding:12px;text-align:center}
+.stat .val{font-size:1.05rem;font-weight:800;font-variant-numeric:tabular-nums}
+.stat .lbl{font-size:.68rem;color:var(--muted);margin-top:2px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{flex:1;min-width:130px;display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:13px 20px;border-radius:10px;font-weight:700;font-size:.9rem;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s,opacity .2s}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn-primary{background:linear-gradient(135deg,var(--accent),#5a3ce0);color:#fff;box-shadow:0 4px 18px var(--glow)}
+.btn-primary:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 6px 24px var(--glow)}
+.btn-secondary{background:var(--surface2);color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover:not(:disabled){border-color:var(--accent)}
+.btn svg{width:17px;height:17px;fill:currentColor}
+.progress{display:none;height:4px;background:var(--border);border-radius:2px;margin-top:16px;overflow:hidden}
+.progress.active{display:block}
+.progress-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .1s}
+.section{max-width:960px;margin:0 auto;padding:72px 24px}
+.section h2{font-size:1.6rem;font-weight:800;letter-spacing:-.02em;margin-bottom:10px;text-align:center}
+.section>p{color:var(--muted);text-align:center;max-width:540px;margin:0 auto 40px;font-size:.92rem}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px}
+.step .num{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;color:#fff;margin-bottom:14px}
+.step h3{font-size:1rem;margin-bottom:6px}
+.step p{color:var(--muted);font-size:.85rem}
+.faq-list{max-width:680px;margin:0 auto}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;overflow:hidden}
+.faq-q{width:100%;background:none;border:none;color:var(--text);padding:16px 20px;text-align:left;cursor:pointer;font-size:.9rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;transition:background .2s}
+.faq-q:hover{background:var(--surface2)}
+.faq-q .arrow{transition:transform .3s;color:var(--muted);font-size:.75rem}
+.faq-item.open .faq-q .arrow{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a-inner{padding:0 20px 16px;color:var(--muted);font-size:.85rem;line-height:1.7}
+footer{border-top:1px solid var(--border);padding:36px 24px;text-align:center}
+footer .footer-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:14px}
+footer a{color:var(--muted);text-decoration:none;font-size:.85rem;transition:color .2s}
+footer a:hover{color:var(--accent)}
+footer .copy{color:var(--muted);font-size:.75rem}
+footer .dev{color:var(--muted);font-size:.75rem;margin-top:6px}
+footer .dev b{color:var(--accent)}
+.spinner{display:none;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+.spinner.active{display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:12px 20px;border-radius:10px;font-size:.85rem;opacity:0;transition:all .3s;z-index:999;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+@media(max-width:768px){.nav-links a:not(.tg-btn){display:none}.presets{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.hero{padding:48px 20px 24px}.tool-section{padding:12px 16px 48px}.panel{padding:20px}.actions{flex-direction:column}.btn{width:100%}.section{padding:48px 20px}}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<div class="logo">nightcore</div>
+<div class="nav-links">
+<a href="#tool">Tool</a>
+<a href="#how">How it works</a>
+<a href="#faq">FAQ</a>
+<a href="https://t.me/TranKhoaDiem" target="_blank" rel="noopener" class="tg-btn">
+<svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+@TranKhoaDiem
+</a>
+</div>
+</div>
+</nav>
+<header class="hero">
+<h1>Nightcore Maker — <span>Free Online Nightcore Generator</span></h1>
+<p>Drop a song. It speeds up with the pitch rising, the classic nightcore sound. Pick a preset or fine-tune the speed before you download. Everything runs in your browser.</p>
+</header>
+<main class="tool-section" id="tool">
+<div class="dropzone" id="dropzone">
+<svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+<h3>Drop your song here</h3>
+<p>or click to browse files</p>
+<div class="formats">MP3 · WAV · M4A · FLAC · OGG · AAC · up to 100 MB</div>
+<input type="file" id="fileInput" accept="audio/*" hidden>
+</div>
+<div class="panel" id="panel">
+<div class="file-info">
+<div class="icon">♫</div>
+<div class="meta">
+<div class="name" id="fileName">—</div>
+<div class="detail" id="fileDetail">—</div>
+</div>
+<button class="remove" id="removeBtn" title="Remove">✕</button>
+</div>
+<div class="presets" id="presets">
+<div class="preset active" data-speed="1.25">
+<div class="label">Nightcore</div>
+<div class="desc">1.25× · pitch ↑</div>
+</div>
+<div class="preset" data-speed="1.15">
+<div class="label">Sped Up</div>
+<div class="desc">1.15× · pitch ↑</div>
+</div>
+<div class="preset" data-speed="1.35">
+<div class="label">Hyper</div>
+<div class="desc">1.35× · pitch ↑</div>
+</div>
+<div class="preset" data-speed="0.8">
+<div class="label">Daycore</div>
+<div class="desc">0.8× · pitch ↓</div>
+</div>
+</div>
+<div class="control-group">
+<div class="control-header">
+<label>Speed</label>
+<span class="value" id="speedVal">1.25×</span>
+</div>
+<input type="range" id="speedRange" min="0.25" max="4" step="0.01" value="1.25">
+<div class="range-labels"><span>0.25×</span><span>1×</span><span>4×</span></div>
+</div>
+<div class="stats">
+<div class="stat"><div class="val" id="origBpm">—</div><div class="lbl">Original BPM</div></div>
+<div class="stat"><div class="val" id="newBpm">—</div><div class="lbl">New BPM</div></div>
+<div class="stat"><div class="val" id="newDur">—</div><div class="lbl">New Duration</div></div>
+</div>
+<div class="actions">
+<button class="btn btn-primary" id="playBtn" disabled>
+<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+<span id="playLabel">Preview</span>
+</button>
+<button class="btn btn-secondary" id="downloadBtn" disabled>
+<svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+Download WAV
+</button>
+</div>
+<div class="progress" id="progress"><div class="progress-bar" id="progressBar"></div></div>
+</div>
+</main>
+<section class="section" id="how">
+<h2>How to make a nightcore song</h2>
+<p>Three steps. No account. No upload. The file never leaves your device.</p>
+<div class="steps">
+<div class="step">
+<div class="num">1</div>
+<h3>Drop in the song</h3>
+<p>MP3, WAV, M4A, FLAC, OGG or AAC up to 100 MB. It loads straight from your device into the browser's audio engine.</p>
+</div>
+<div class="step">
+<div class="num">2</div>
+<h3>Pick a style</h3>
+<p>Starts on Nightcore: 1.25× with the pitch rising. Switch to Sped Up, Hyper or Daycore, or drag the speed yourself.</p>
+</div>
+<div class="step">
+<div class="num">3</div>
+<h3>Preview and download</h3>
+<p>Listen at the new speed, then render and download the whole track as a WAV file. No watermark, no sign-up.</p>
+</div>
+</div>
+</section>
+<section class="section" id="faq" style="background:var(--surface);max-width:100%">
+<h2>Nightcore and sped up questions</h2>
+<p>What the tool does, and what it doesn't.</p>
+<div class="faq-list">
+<div class="faq-item">
+<button class="faq-q">What exactly is nightcore? <span class="arrow">▼</span></button>
+<div class="faq-a"><div class="faq-a-inner">Nightcore is a remix style where a song is played faster, usually by about 20 to 30 percent, and the pitch rises with the speed. The result is a brighter, more energetic version of the original. The classic preset here is 1.25×, which means the pitch climbs naturally with the tempo.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Does my file get uploaded anywhere? <span class="arrow">▼</span></button>
+<div class="faq-a"><div class="faq-a-inner">No. Decoding, speed changes, and rendering all happen inside this page using the Web Audio API. The song never leaves your device. There is no server, no account, and no tracking of the audio content.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Why does the pitch rise with the speed? <span class="arrow">▼</span></button>
+<div class="faq-a"><div class="faq-a-inner">Changing playback speed resamples the audio, so the pitch shifts along with the tempo. That is exactly what makes nightcore sound the way it does: faster and higher. If you want the tempo change without the pitch shift, you would need time-stretching, which this single-file build does not do.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-q">What format is the download? <span class="arrow">▼</span></button>
+<div class="faq-a"><div class="faq-a-inner">The rendered file is a 16-bit PCM WAV at the source sample rate. It is uncompressed, so there is no additional quality loss from the export. You can convert it to MP3 afterward if you need a smaller file.</div></div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Why does the BPM reading not always show? <span class="arrow">▼</span></button>
+<div class="faq-a"><div class="faq-a-inner">BPM detection uses a simple energy-based estimate that works well for steady electronic and pop tracks but can miss on live recordings or tracks with tempo changes. The speed multiplier still works regardless of whether BPM is detected.</div></div>
+</div>
+</div>
+</section>
+<footer>
+<div class="footer-links">
+<a href="https://t.me/TranKhoaDiem" target="_blank" rel="noopener">Telegram: @TranKhoaDiem</a>
+<a href="https://ngthanhdiem.github.io/nightcore" target="_blank" rel="noopener">ngthanhdiem.github.io/nightcore</a>
+</div>
+<div class="copy">Nightcore Maker — runs entirely in your browser. No uploads, no accounts.</div>
+<div class="dev">dev <b>Tran Khoa Diem</b></div>
+</footer>
+<div class="toast" id="toast"></div>
+<script>
+(function(){
+'use strict';
+let audioCtx=null,audioBuffer=null,sourceNode=null,isPlaying=false,currentSpeed=1.25,fileName='',detectedBpm=null,playStartTime=0,pausedAt=0;
+const $=(s)=>document.querySelector(s);
+const dropzone=$('#dropzone'),fileInput=$('#fileInput'),panel=$('#panel'),fileNameEl=$('#fileName'),fileDetailEl=$('#fileDetail'),removeBtn=$('#removeBtn'),speedRange=$('#speedRange'),speedVal=$('#speedVal'),playBtn=$('#playBtn'),playLabel=$('#playLabel'),downloadBtn=$('#downloadBtn'),presets=document.querySelectorAll('.preset'),origBpmEl=$('#origBpm'),newBpmEl=$('#newBpm'),newDurEl=$('#newDur'),progress=$('#progress'),progressBar=$('#progressBar'),toast=$('#toast');
+function showToast(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(()=>toast.classList.remove('show'),3000);}
+dropzone.addEventListener('click',()=>fileInput.click());
+dropzone.addEventListener('dragover',(e)=>{e.preventDefault();dropzone.classList.add('dragover');});
+dropzone.addEventListener('dragleave',()=>dropzone.classList.remove('dragover'));
+dropzone.addEventListener('drop',(e)=>{e.preventDefault();dropzone.classList.remove('dragover');const f=e.dataTransfer.files[0];if(f)loadFile(f);});
+fileInput.addEventListener('change',()=>{const f=fileInput.files[0];if(f)loadFile(f);fileInput.value='';});
+async function loadFile(file){
+if(!file.type.startsWith('audio/')&&!/\.(mp3|wav|m4a|flac|ogg|aac)$/i.test(file.name)){showToast('Please select an audio file.');return;}
+if(file.size>100*1024*1024){showToast('File is larger than 100 MB.');return;}
+stopPlayback();
+fileName=file.name;
+fileNameEl.textContent=file.name;
+fileDetailEl.textContent=formatSize(file.size);
+if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+if(audioCtx.state==='suspended')await audioCtx.resume();
+try{const arrayBuf=await file.arrayBuffer();audioBuffer=await audioCtx.decodeAudioData(arrayBuf);}
+catch(err){showToast('Could not decode this audio file.');return;}
+detectedBpm=estimateBpm(audioBuffer);
+origBpmEl.textContent=detectedBpm?detectedBpm:'—';
+dropzone.style.display='none';
+panel.classList.add('active');
+playBtn.disabled=false;
+downloadBtn.disabled=false;
+pausedAt=0;
+applySettings();
+}
+function formatSize(bytes){if(bytes<1024*1024)return(bytes/1024).toFixed(1)+' KB';return(bytes/1024/1024).toFixed(1)+' MB';}
+function formatDuration(sec){const m=Math.floor(sec/60);const s=Math.floor(sec%60);return m+':'+String(s).padStart(2,'0');}
+function estimateBpm(buffer){
+try{
+const data=buffer.getChannelData(0),sr=buffer.sampleRate,windowSize=Math.floor(sr*0.02),numWindows=Math.floor(data.length/windowSize);
+if(numWindows<20)return null;
+const energies=[];
+for(let i=0;i<numWindows;i++){let sum=0;const start=i*windowSize;for(let j=0;j<windowSize;j++){const v=data[start+j];sum+=v*v;}energies.push(sum/windowSize);}
+const peaks=[];
+for(let i=1;i<energies.length-1;i++){const prev=energies[i-1],curr=energies[i],next=energies[i+1];if(curr>prev&&curr>next&&curr>0.001)peaks.push(i*windowSize/sr);}
+if(peaks.length<4)return null;
+const intervals=[];
+for(let i=1;i<peaks.length;i++){const dt=peaks[i]-peaks[i-1];if(dt>0.25&&dt<2.0)intervals.push(dt);}
+if(intervals.length<3)return null;
+intervals.sort((a,b)=>a-b);
+const median=intervals[Math.floor(intervals.length/2)];
+let bpm=Math.round(60/median);
+while(bpm<60)bpm*=2;
+while(bpm>200)bpm=Math.round(bpm/2);
+return bpm;
+}catch{return null;}
+}
+function applySettings(){
+const dur=audioBuffer?audioBuffer.duration/currentSpeed:0;
+const newBpm=detectedBpm?Math.round(detectedBpm*currentSpeed):null;
+speedVal.textContent=currentSpeed.toFixed(2)+'×';
+speedRange.value=currentSpeed;
+newBpmEl.textContent=newBpm?newBpm:'—';
+newDurEl.textContent=audioBuffer?formatDuration(dur):'—';
+presets.forEach(p=>{const ps=parseFloat(p.dataset.speed);p.classList.toggle('active',Math.abs(ps-currentSpeed)<0.005);});
+if(isPlaying)restartPlayback();
+}
+speedRange.addEventListener('input',()=>{currentSpeed=parseFloat(speedRange.value);applySettings();});
+presets.forEach(p=>{p.addEventListener('click',()=>{currentSpeed=parseFloat(p.dataset.speed);applySettings();});});
+function stopPlayback(){
+if(sourceNode){try{sourceNode.stop();}catch{}try{sourceNode.disconnect();}catch{}sourceNode=null;}
+isPlaying=false;
+playLabel.textContent='Preview';
+playBtn.querySelector('svg').innerHTML='<path d="M8 5v14l11-7z"/>';
+}
+function restartPlayback(){
+if(!audioBuffer||!audioCtx)return;
+const wasPlaying=isPlaying;
+stopPlayback();
+if(wasPlaying)startPlayback(pausedAt);
+}
+function startPlayback(offset){
+if(!audioBuffer||!audioCtx)return;
+if(audioCtx.state==='suspended')audioCtx.resume();
+sourceNode=audioCtx.createBufferSource();
+sourceNode.buffer=audioBuffer;
+sourceNode.playbackRate.value=currentSpeed;
+const startAt=offset||0;
+const dur=Math.max(0,audioBuffer.duration-startAt);
+sourceNode.connect(audioCtx.destination);
+sourceNode.start(0,startAt,dur);
+playStartTime=audioCtx.currentTime-startAt/currentSpeed;
+isPlaying=true;
+playLabel.textContent='Stop';
+playBtn.querySelector('svg').innerHTML='<path d="M6 6h12v12H6z"/>';
+sourceNode.onended=()=>{if(isPlaying){stopPlayback();pausedAt=0;}};
+}
+playBtn.addEventListener('click',()=>{
+if(!audioBuffer)return;
+if(isPlaying){
+pausedAt=(audioCtx.currentTime-playStartTime)*currentSpeed;
+if(pausedAt>audioBuffer.duration)pausedAt=0;
+stopPlayback();
+}else{
+if(pausedAt>=audioBuffer.duration)pausedAt=0;
+startPlayback(pausedAt);
+}
+});
+downloadBtn.addEventListener('click',async()=>{
+if(!audioBuffer)return;
+downloadBtn.disabled=true;
+const originalHTML=downloadBtn.innerHTML;
+downloadBtn.innerHTML='<span class="spinner active"></span> Rendering...';
+progress.classList.add('active');
+progressBar.style.width='0%';
+try{
+const rendered=await renderOffline(audioBuffer,currentSpeed);
+const wavBlob=encodeWav(rendered);
+const url=URL.createObjectURL(wavBlob);
+const a=document.createElement('a');
+a.href=url;
+const base=fileName.replace(/\.[^.]+$/,'');
+a.download=base+'_nightcore_'+currentSpeed.toFixed(2)+'x.wav';
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
+setTimeout(()=>URL.revokeObjectURL(url),10000);
+showToast('Download ready.');
+}catch(err){
+showToast('Render failed: '+err.message);
+}finally{
+downloadBtn.disabled=false;
+downloadBtn.innerHTML=originalHTML;
+progress.classList.remove('active');
+progressBar.style.width='0%';
+}
+});
+async function renderOffline(buffer,speed){
+const sr=buffer.sampleRate;
+const newLength=Math.ceil(buffer.length/speed);
+const offline=new OfflineAudioContext(buffer.numberOfChannels,newLength,sr);
+const src=offline.createBufferSource();
+src.buffer=buffer;
+src.playbackRate.value=speed;
+src.connect(offline.destination);
+src.start(0);
+return await offline.startRendering();
+}
+function encodeWav(audioBuffer){
+const numCh=audioBuffer.numberOfChannels,sampleRate=audioBuffer.sampleRate,length=audioBuffer.length,bytesPerSample=2,blockAlign=numCh*bytesPerSample,dataSize=length*blockAlign,bufferSize=44+dataSize;
+const ab=new ArrayBuffer(bufferSize);
+const view=new DataView(ab);
+const writeString=(offset,str)=>{for(let i=0;i<str.length;i++)view.setUint8(offset+i,str.charCodeAt(i));};
+writeString(0,'RIFF');
+view.setUint32(4,36+dataSize,true);
+writeString(8,'WAVE');
+writeString(12,'fmt ');
+view.setUint32(16,16,true);
+view.setUint16(20,1,true);
+view.setUint16(22,numCh,true);
+view.setUint32(24,sampleRate,true);
+view.setUint32(28,sampleRate*blockAlign,true);
+view.setUint16(32,blockAlign,true);
+view.setUint16(34,16,true);
+writeString(36,'data');
+view.setUint32(40,dataSize,true);
+const channels=[];
+for(let c=0;c<numCh;c++)channels.push(audioBuffer.getChannelData(c));
+let offset=44;
+for(let i=0;i<length;i++){
+for(let c=0;c<numCh;c++){
+let s=channels[c][i];
+s=Math.max(-1,Math.min(1,s));
+view.setInt16(offset,s<0?s*0x8000:s*0x7FFF,true);
+offset+=2;
+}
+}
+return new Blob([ab],{type:'audio/wav'});
+}
+removeBtn.addEventListener('click',()=>{
+stopPlayback();
+audioBuffer=null;
+detectedBpm=null;
+pausedAt=0;
+panel.classList.remove('active');
+dropzone.style.display='';
+fileNameEl.textContent='—';
+fileDetailEl.textContent='—';
+origBpmEl.textContent='—';
+newBpmEl.textContent='—';
+newDurEl.textContent='—';
+playBtn.disabled=true;
+downloadBtn.disabled=true;
+});
+document.querySelectorAll('.faq-q').forEach(btn=>{
+btn.addEventListener('click',()=>{
+const item=btn.parentElement;
+const wasOpen=item.classList.contains('open');
+document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null;});
+if(!wasOpen){item.classList.add('open');const ans=item.querySelector('.faq-a');ans.style.maxHeight=ans.scrollHeight+'px';}
+});
+});
+window.addEventListener('beforeunload',()=>{if(audioCtx)audioCtx.close();});
+})();
+</script>
+</body>
+</html>
